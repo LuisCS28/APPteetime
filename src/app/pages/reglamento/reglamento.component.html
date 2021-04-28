@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="subtitulo ion-text-wrap">
+      Reglamento 
+    </ion-title>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon  color="tertiary" slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+<ion-card *ngFor="let regla of reglas; let i = index">
+  <ion-card-header>
+    <ion-card-title class="titulo"> {{regla.titulo}} </ion-card-title>
+    <hr>
+    <ion-card-subtitle class="subtitulo"> {{regla.regla}} </ion-card-subtitle>
+    <ion-card-subtitle class="normal">{{regla.puntos}}</ion-card-subtitle>
+    <ion-item  (click)="verReglamento(i)" >
+      <ion-label class="normal-2">Ver más . . . </ion-label>
+      <ion-icon  slot="end" name="caret-forward-outline"></ion-icon>
+    </ion-item>
+  </ion-card-header>
+  
+</ion-card>
+
+  </ion-content>
+

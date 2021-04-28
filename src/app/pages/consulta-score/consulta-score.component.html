@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>Plantillas SCORE</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon  color="tertiary" slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<!--  iterates through all the rows of golf records in the database and displays them to the user-->
+  <ion-card *ngFor="let item of golfData ">
+
+  <ion-card-header>
+    <ion-item>Nombre de la plantilla: {{item.GolfCourseName}}</ion-item>
+  </ion-card-header>
+  <ion-grid>
+    <ion-row padding>
+      <ion-col col-1>Par Resultado: [{{item.ParResult}}]</ion-col>
+
+      <ion-col col-2>Hoyos Resultado: [{{item.HoleResult}}]</ion-col>
+    </ion-row>
+  </ion-grid>
+
+    <ion-card-subtitle>Tiempo: {{item.Timestamp}} Email:  {{item.Email}}</ion-card-subtitle>
+
+</ion-card>
+</ion-content>
+
