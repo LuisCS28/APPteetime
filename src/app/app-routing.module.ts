@@ -9,12 +9,15 @@ import { ReglaComponent } from './components/regla/regla.component';
 import { ClimaComponent } from './pages/clima/clima.component';
 import { Calendariocomponent} from './pages/calendario/calendario.component';
 import { ConsultaScoreComponent} from './pages/consulta-score/consulta-score.component';
+import { canActivate } from '@angular/fire/auth-guard';
+import { map } from 'rxjs/operators';
 
+const isAdmin = (next: any) => map( (user: any) => !!user && '9Mjh9j86BwVa7rXYJc79EEhk17D3' === user.uid);
 
 const routes: Routes = [
-  {path: 'home', component:HomeComponent, },
-  {path: 'inicio', component:InicioComponent },
   {path: 'perfil', component:PerfilComponent },
+  {path: 'inicio', component:InicioComponent, ...canActivate(isAdmin) },
+  {path: 'home', component:HomeComponent, },
   {path: 'tarjeta', component:TarjetaComponent },
   {path: 'reglamento', component:ReglamentoComponent },
   {path: 'clima', component:ClimaComponent },

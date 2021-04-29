@@ -17,7 +17,7 @@
           </ion-item>
         </ion-menu-toggle>
 
-        <ion-menu-toggle autoHide=false>
+        <ion-menu-toggle autoHide=false *ngIf="admin">
           <ion-item button=true detail=true [routerLink]="['/inicio']" >
             <ion-label class="normal">Configuración de Noticias</ion-label>
             <ion-icon  slot="start" name="settings-outline"></ion-icon>
