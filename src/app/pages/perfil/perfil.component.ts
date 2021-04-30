@@ -6,6 +6,7 @@ import { FireauthService } from '../../services/fireauth.service';
 import { FirestorageService } from '../../services/firestorage.service';
 import { FirestoreService } from '../../services/firestore.service';
 
+
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
@@ -32,7 +33,8 @@ export class PerfilComponent implements OnInit {
   constructor(public menuController: MenuController,
               public auth: FireauthService,
               public firestorageService:FirestorageService,
-              public firestoreService: FirestoreService) {
+              public firestoreService: FirestoreService,
+              ) {
 
                 this.auth.estateAuth().subscribe(resp => {
                   console.log(resp);;
@@ -67,11 +69,6 @@ export class PerfilComponent implements OnInit {
     console.log(this.cliente);
   }
 
-
-  openMenu() { 
-    console.log('se abrio esta joda');
-    this.menuController.toggle('principal');
-  }
 
   async newImageUpload(event:any){
     if ( event.target.files && event.target.files[0] ) {
@@ -139,7 +136,12 @@ export class PerfilComponent implements OnInit {
 
   }
 
- 
+  ionViewWillEnter() {
+    this.menuController.enable(false);
+    {
+
+    }
+   }
 
 
 }

@@ -26,7 +26,7 @@ export class ClimaComponent implements OnInit {
   }
 
   getDataClima(){
-    let data = JSON.parse('{"coord":{"lon":-74.098,"lat":4.8094},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],"base":"stations","main":{"temp":290.15,"feels_like":289.45,"temp_min":290.15,"temp_max":290.15,"pressure":1025,"humidity":59},"visibility":10000,"wind":{"speed":7.72,"deg":160},"clouds":{"all":75},"dt":1618260633,"sys":{"type":1,"id":8582,"country":"CO","sunrise":1618224630,"sunset":1618268594},"timezone":-18000,"id":3685733,"name":"Cota","cod":200}');
+    let data = JSON.parse('{"coord":{"lon":-74.098,"lat":4.8094},"weather":[{"id":501,"main":"Rain","description":"moderate rain","icon":"10d"}],"base":"stations","main":{"temp":287.15,"feels_like":286.75,"temp_min":287.15,"temp_max":287.15,"pressure":1028,"humidity":82},"visibility":10000,"wind":{"speed":2.06,"deg":270},"rain":{"1h":3.65},"clouds":{"all":75},"dt":1619807942,"sys":{"type":1,"id":8582,"country":"CO","sunrise":1619779493,"sunset":1619823723},"timezone":-18000,"id":3685733,"name":"Cota","cod":200}');
     this.setDataClima(data);
   }
   setDataClima(data){

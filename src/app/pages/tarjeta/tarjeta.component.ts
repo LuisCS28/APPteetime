@@ -26,7 +26,7 @@ export class TarjetaComponent implements OnInit {
 
     // Par and score input ranges can be changed accordingly.
     minScore = 0;
-    maxScore = 6;
+    maxScore = 9;
 
     attrMaxLength = 1;
 

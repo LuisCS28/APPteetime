@@ -3,19 +3,15 @@
     <ion-title class="subtitulo ion-text-wrap">
       Perfil
     </ion-title>
-
-    <ion-buttons slot="start">
-      <ion-button (click)="openMenu()">
-        <ion-icon  color="tertiary" slot="icon-only" name="menu-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
   <ion-content>
     <div *ngIf="!uid.length">
-
-      <h3 class="encabezado-bordes p-3 encabezado">Ingrese Datos</h3>
+      <center>
+        <img src="data:image/png;base64,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">
+     </center>
+       <h3 class="encabezado-bordes p-3 encabezado">Ingrese Datos</h3>
       
       <ion-item *ngIf="!ingresaEnable">
         <ion-label class="normal" position="floating">
@@ -57,8 +53,8 @@
     </div>
 
     <!--  -->
-
     <div *ngIf="uid.length">
+
       <h3 class="encabezado-bordes p-3 encabezado">Tus Datos</h3>
       <h4 class="normal p-3 ">{{cliente.nombre}}</h4>
       <ion-item>
@@ -73,19 +69,13 @@
         </ion-label>
       </ion-item>
 
-
       <div style="text-align: end; margin:10px">
         <ion-button [routerLink]="['/']" 
-                  (click)="guardarUser()" class="normal" color="dark">Guardar</ion-button>
+                  (click)="guardarUser()" class="normal" color="dark">Continuar</ion-button>
       </div>
       <div style="text-align: end; margin:10px">
         <ion-button (click)="salir()" class="normal" color="dark">Salir</ion-button>
       </div>
     </div>
-
-
-     
-    
-
 
   </ion-content>

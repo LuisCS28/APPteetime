@@ -32,6 +32,12 @@ export class HomeComponent implements OnInit {
        this.noticias = resp;
      });
    }
+   ionViewWillEnter() {
+    this.menuController.enable(true);
+    {
+
+    }
+   }
 
  
 

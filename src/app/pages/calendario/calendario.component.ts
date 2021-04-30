@@ -17,7 +17,7 @@ export class Calendariocomponent implements OnInit {
     desc: '',
     startTime: '',
     endTime: '',
-    Cddie1: '' ,Cddie2: '', Cddie3: '',
+    Cddie1: false ,Cddie2: false, Cddie3: false,
     NPlayer1: '', NPlayer2: '', NPlayer3: '',
     CPlayer1: '', CPlayer2: '', CPlayer3: '',
     DPlayer1: '', DPlayer2: '', DPlayer3: '',
@@ -58,7 +58,7 @@ export class Calendariocomponent implements OnInit {
     this.event = {
       title: '',
       desc: '',
-      Cddie1: '', Cddie2: '', Cddie3: '',
+      Cddie1: false, Cddie2: false, Cddie3: false,
       startTime: new Date().toISOString(),
       endTime: new Date().toISOString(),
       NPlayer1: '', NPlayer2: '', NPlayer3: '',
