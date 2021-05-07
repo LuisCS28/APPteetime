@@ -36,7 +36,6 @@ enableNewNoticia = false;
   }
 
   openMenu() { 
-    console.log('se abrio esta joda');
     this.menuController.toggle('principal');
   }
 

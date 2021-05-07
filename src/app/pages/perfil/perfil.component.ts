@@ -138,9 +138,6 @@ export class PerfilComponent implements OnInit {
 
   ionViewWillEnter() {
     this.menuController.enable(false);
-    {
-
-    }
    }
 
 

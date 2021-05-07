@@ -15,7 +15,6 @@ export class NoticiasComponent implements OnInit {
    }
 
   ngOnInit() {
-    // console.log('la noticia es', this.noticia);
     
   }
 

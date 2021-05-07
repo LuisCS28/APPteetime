@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService} from '../../services/database.service';
 import { MenuController } from '@ionic/angular';
+//import { FireauthService } from '../../services/fireauth.service';
+
 import * as moment from 'moment';
 import {NavController} from '@ionic/angular';
 
@@ -13,18 +15,25 @@ import {NavController} from '@ionic/angular';
 export class ConsultaScoreComponent implements OnInit {
 
   golfData;
-  constructor(private databaseService: DatabaseService, private navigationController: NavController,public menuController: MenuController) { }
+  constructor(private databaseService: DatabaseService, 
+    private navigationController: NavController,
+    //public auth: FireauthService,
+    public menuController: MenuController) { }
 
 
   ngOnInit() {
+   /* if (this.FireauthService.userDetails()) {
+      this.FireauthService.email;
+    } else {
+      this.navigationController.navigateBack('');
+    }
+  */
     this.databaseService.readAllRecord().subscribe(data => {
       this.golfData = data.map(e => {
 
-        // Formats the date in a easier to understand form.
         let date = moment(e.payload.doc.data()['timestamp']).format("DD-MMM-YYYY HH:mm:ss");
 
         return {
-          // These values can be easily accessible in the .html file as DOM parable objects i.e. {{Email}}
           id: e.payload.doc.id,
           Email: e.payload.doc.data()['email'],
           Timestamp: date,

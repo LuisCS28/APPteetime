@@ -5,7 +5,6 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PagesModule } from './pages/pages.module';
-import { BackendModule } from './backend/backend.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment'
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -28,7 +27,6 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireStorageModule,
     IonicModule.forRoot(), 
     PagesModule,
-    BackendModule,
     AngularFireAuthModule,
     AppRoutingModule],
     
