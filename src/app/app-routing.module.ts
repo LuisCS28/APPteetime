@@ -14,7 +14,6 @@ import { map } from 'rxjs/operators';
 const isAdmin = (next: any) => map( (user: any) => !!user && '9Mjh9j86BwVa7rXYJc79EEhk17D3' === user.uid);
 
 const routes: Routes = [
-  {path: '**', redirectTo: 'perfil', pathMatch: 'full'},
   {path: 'perfil', component:PerfilComponent },
   {path: 'inicio', component:InicioComponent, ...canActivate(isAdmin) },
   {path: 'home', component:HomeComponent, },
@@ -23,7 +22,8 @@ const routes: Routes = [
   {path: 'clima', component:ClimaComponent },
   {path: 'calendario', component:Calendariocomponent},
   {path: 'consulta-score', component:ConsultaScoreComponent},
-  {path: '', component: HomeComponent},
+  {path: '**', redirectTo: 'perfil', pathMatch: 'full'},
+
 ];
 
 @NgModule({

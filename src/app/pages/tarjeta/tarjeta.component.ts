@@ -4,6 +4,8 @@ import {ModalController, NavController} from '@ionic/angular';
 import { ResultadoComponent } from '../resultado/resultado.component';
 import { MenuController } from '@ionic/angular';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { FireauthService } from '../../services/fireauth.service';
+
 
 
 
@@ -34,10 +36,21 @@ export class TarjetaComponent implements OnInit {
                 private navigationController: NavController,
                 public menuController: MenuController,
                 private db: AngularFirestore,
+                public fireAuth: FireauthService,
+
     ) {
+        this.email = fireAuth.email;
     }
 
+
     ngOnInit() {
+ /*       if (this.fireAuth.getUid()) {
+            this.fireAuth.email;
+        }
+        else {
+            this.navigationController.navigateBack('');
+        }
+*/
     }
 
     // When the user clicks the populate button, this function enables the flag to populate the par, score inputs
@@ -50,6 +63,7 @@ export class TarjetaComponent implements OnInit {
 
         // Stores the inputs in suitable key: value relationship
         let record = {};
+//        record['email'] = this.fireAuth.email;
         record['timestamp'] = Date.now();
         record['golfCourseName'] = this.golfCourseName;
         record['holeNumber'] = this.holeNumber.toString();

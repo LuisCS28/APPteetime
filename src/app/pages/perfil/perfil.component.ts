@@ -110,8 +110,6 @@ export class PerfilComponent implements OnInit {
     });
   }
 
-
-
   async salir() {
     this.auth.logout();
     this.suscriberUserInfo.unsubscribe();
@@ -139,6 +137,7 @@ export class PerfilComponent implements OnInit {
   ionViewWillEnter() {
     this.menuController.enable(false);
    }
+   
 
 
 }

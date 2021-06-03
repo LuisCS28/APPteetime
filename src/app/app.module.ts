@@ -28,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule.forRoot(), 
     PagesModule,
     AngularFireAuthModule,
-    AppRoutingModule],
+    AppRoutingModule  
+  ],
     
   providers: [{
     provide: RouteReuseStrategy, 

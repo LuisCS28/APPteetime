@@ -6,10 +6,14 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class FireauthService {
 
+  public email;
+  
   constructor(public auth: AngularFireAuth) {
 
     this.getUid();
   }
+
+  
 
   login(email: string, password: string){
     return this.auth.signInWithEmailAndPassword(email, password)
@@ -23,6 +27,7 @@ export class FireauthService {
   logout(){
     return this.auth.signOut();
   }
+
 
   async getUid() {
     const user = await this.auth.currentUser;
